@@ -50,7 +50,7 @@ fi
 
 # Find out resolution and framerate
 RESOLUTION=$(ffprobe -v error -select_streams v:0 -show_entries stream=height -of default=nw=1:nk=1 "${1}" | head -1)
-FPS_RAW=$(ffprobe -v error -select_streams v:0 -show_entries stream=avg_frame_rate -of default=nw=1:nk=1 "${1}" | head -1)
+FPS_RAW=$(ffprobe -v error -select_streams v:0 -show_entries stream=r_frame_rate -of default=nw=1:nk=1 "${1}" | head -1)
 FPS="${FPS_RAW%/*}"
 C_SETTING="${RESOLUTION}p${FPS}"
 
