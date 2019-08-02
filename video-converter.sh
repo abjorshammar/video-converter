@@ -17,7 +17,7 @@ function dnxhd () {
 }
 
 function x264 () {
-  ffmpeg -y -i "$1" -c:v libx264 -preset slow -b:v "${2}"k -pass 1 -c:a aac -b:a 320k -f mp4 /dev/null && ffmpeg -i "$1" -c:v libx264 -preset slow -b:v "${2}"k -pass 2 -c:a aac -b:a 320k "${BASENAME}".mp4
+  ffmpeg -y -i "$1" -c:v libx264 -preset slow -b:v "${2}"k -pass 1 -c:a aac -b:a 320k -f mp4 /dev/null && ffmpeg -i "$1" -c:v libx264 -preset slow -b:v "${2}"k -pass 2 -c:a aac -b:a 320k "${BASENAME}"_rendered.mp4
 }
 
 # Read options
